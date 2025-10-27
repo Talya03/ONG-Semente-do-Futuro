@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Plataforma de apoio e captação para ONGs — projetos, voluntariado e doações." />
+    <title>Sementes do Futuro — ONG</title>
+    <meta property="og:title" content="Sementes do Futuro — ONG" />
+    <meta property="og:description" content="Juntos transformamos vidas: apoie projetos de educação, água limpa e alimentação." />
+    <meta property="og:type" content="website" />
+    
+    <!-- Ionicons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    
+    <!-- HEADER: Navegação principal -->
+    <header class="site-header" role="banner">
+        <div class="container header-inner">
+        <a class="brand" href="index.html">Sementes do<span> Futuro</span></a>
+        <nav class="main-nav" role="navigation" aria-label="Menu principal">
+            <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projetos.html">Projetos</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            </ul>
+        </nav>
+        <div class="header-cta">
+            <a href="#" class="btn primary" id="donateBtn">Doe Agora</a>
+        </div>
+        <!-- Ícone de Menu Atualizado -->
+        <button class="nav-toggle" aria-controls="menu" aria-expanded="false" aria-label="Abrir menu">
+            <ion-icon name="menu-outline" class="icon-menu"></ion-icon>
+            <ion-icon name="close-outline" class="icon-close"></ion-icon>
+        </button>
+        </div>
+    </header>
+
+    <main id="home" class="main">
+        
+        <!-- HERO (Seção principal da Home) -->
+        <section class="hero" aria-labelledby="hero-title">
+        <img src="assets/crianças.jpeg" alt="Crianças sorrindo" class="hero-img" />
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+            <h1 id="hero-title">Levante sua <span>mão amiga</span></h1>
+            <p>Juntos transformamos vidas: apoie projetos de educação, água limpa e alimentação.</p>
+            <div class="hero-actions">
+            <a href="projetos.html" class="btn">Conheça Projetos</a>
+            <a href="cadastro.html" class="btn outline">Seja Voluntário</a>
+            </div>
+        </div>
+        </section>
+
+        <!-- SOBRE (Especificação: Sobre a organização) -->
+        <section id="about" class="about container" aria-labelledby="about-title">
+        <h2 id="about-title">Sobre Nós</h2>
+        <div class="about-grid">
+            <div class="about-text">
+            <p>Somos uma organização sem fins lucrativos dedicada a melhorar a vida de comunidades através de projetos de educação, água limpa e alimentação. Transparência e impacto social são nossas prioridades.</p>
+            <ul class="about-list">
+                <li>Missão: transformar vidas</li>
+                <li>Visão: comunidades autossustentáveis</li>
+                <li>Valores: transparência, respeito e colaboração</li>
+            </ul>
+            <a href="projetos.html" class="btn">Nossas Causas</a>
+            </div>
+            <div class="about-image" aria-hidden="true">
+            <img src="assets/voluntariado.jpeg" alt="Voluntários da organização" loading="lazy" />
+            </div>
+        </div>
+        </section>
+
+        <!-- CONTATO (Especificação: Informações de contato) -->
+        <section id="contact" class="contact container" aria-labelledby="contact-title">
+        <h2 id="contact-title">Entre em Contato</h2>
+        <form id="contactForm" class="contact-form" novalidate>
+            <label>
+            <span>Nome</span>
+            <input type="text" name="name" required />
+            </label>
+            <label>
+            <span>Email</span>
+            <input type="email" name="email" required />
+            </label>
+            <label>
+            <span>Mensagem</span>
+            <textarea name="message" rows="4" required></textarea>
+            </label>
+            <button class="btn" type="submit">Enviar</button>
+        </form>
+        </section>
+    </main>
+
+    <!-- FOOTER (Rodapé) -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container footer-inner">
+        <p>© <span id="year"></span> Sementes do Futuro — Todos os direitos reservados</p>
+        <nav aria-label="Rodapé">
+            <!-- Ícones Sociais Atualizados -->
+            <ul class="socials">
+            <li><a href="#" aria-label="Facebook"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="#" aria-label="Instagram"><ion-icon name="logo-instagram"></ion-icon></a></li>
+            <li><a href="#" aria-label="Twitter"><ion-icon name="logo-twitter"></ion-icon></a></li>
+            </ul>
+        </nav>
+        </div>
+    </footer>
+
+    <!-- MODAL DE DOAÇÃO (Reutilizado) -->
+    <div id="donationModal" class="modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="donationTitle">
+        <div class="modal-content">
+        <!-- Ícone de Fechar Atualizado -->
+        <button class="modal-close" aria-label="Fechar"><ion-icon name="close-outline"></ion-icon></button>
+        <h3 id="donationTitle">Doar para <span id="donationProject">Projeto</span></h3>
+        <form id="donateForm">
+            <label>
+            <span>Valor (R$)</span>
+            <input type="number" name="amount" min="1" required />
+            </label>
+            <label>
+            <span>Nome (opcional)</span>
+            <input type="text" name="donorName" />
+            </label>
+            <button type="submit" class="btn primary">Contribuir</button>
+        </form>
+        <div id="donationResult" class="hidden" role="status" aria-live="polite"></div>
+        </div>
+    </div>
+
+<script src="script.js" defer></script>
+</body>
+</html>
+
